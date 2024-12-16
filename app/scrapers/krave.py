@@ -131,6 +131,7 @@ for product in products:
 
         # Append product data
         product_data.append({
+            'brand': "Krave Beauty",
             'name': name,
             'link': url,
             'category': category,
@@ -144,13 +145,14 @@ for product in products:
 driver.quit()
 
 with open('krave.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    fieldnames = ['name', 'link', 'category', 'ingredients']
+    fieldnames = ['brand', 'name', 'link', 'category', 'ingredients']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
     # Loop through scraped data and write each item to the CSV
     for product in product_data:
         writer.writerow({
+            'brand': product['brand'],
             'name': product['name'],
             'link': product['link'],
             'category': product['category'],

@@ -127,6 +127,7 @@ for url in category_urls:
             name = soup.find('h1', class_="pdp-heading").text
 
             product_data.append({
+                'brand': "CeraVe",
                 'name': name,
                 'link': link,
                 'category': title,
@@ -146,13 +147,14 @@ for url in category_urls:
 driver.quit()
 
 with open('cerave.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    fieldnames = ['name', 'link', 'category', 'ingredients']
+    fieldnames = ['brand', 'name', 'link', 'category', 'ingredients']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
     # Loop through scraped data and write each item to the CSV
     for product in product_data:
         writer.writerow({
+            'brand': product['brand'],
             'name': product['name'],
             'link': product['link'],
             'category': product['category'],
