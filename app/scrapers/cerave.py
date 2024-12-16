@@ -84,7 +84,7 @@ for url in category_urls:
         except Exception as e:
             print(f"Error extracting URL: {e}")
 
-    print(len(product_urls))
+    #print(len(product_urls))
 
     for product_url in product_urls:
         try:
