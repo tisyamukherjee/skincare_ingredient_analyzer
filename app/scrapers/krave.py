@@ -88,7 +88,7 @@ for product in products:
 
     try:
         # get category
-        category = soup.find("div", class_ = "metafield-rich_text_field").find("p").text
+        #category = soup.find("div", class_ = "metafield-rich_text_field").find("p").text
 
         # get name 
         name = soup.find("div", class_= "custom-product-info").find("h1").text
@@ -134,7 +134,7 @@ for product in products:
             'brand': "Krave Beauty",
             'name': name,
             'link': url,
-            'category': category,
+            #'category': category,
             'ingredients': ingredients
         })
 
@@ -145,7 +145,8 @@ for product in products:
 driver.quit()
 
 with open('krave.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    fieldnames = ['brand', 'name', 'link', 'category', 'ingredients']
+    #fieldnames = ['brand', 'name', 'link', 'category', 'ingredients']
+    fieldnames = ['brand', 'name', 'link', 'ingredients']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
@@ -155,6 +156,6 @@ with open('krave.csv', 'w', newline='', encoding='utf-8') as csvfile:
             'brand': product['brand'],
             'name': product['name'],
             'link': product['link'],
-            'category': product['category'],
+            #'category': product['category'],
             'ingredients': product['ingredients']  
         })

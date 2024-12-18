@@ -53,7 +53,7 @@ for product in product_urls:
         # get product name  
         name = driver.find_element(By.CLASS_NAME, 'info__header-title').text
         # get category 
-        category = driver.find_element(By.CLASS_NAME, 'info__headline').text
+        #category = driver.find_element(By.CLASS_NAME, 'info__headline').text
 
         # Click the "Ingredient" tab
         try:
@@ -95,7 +95,7 @@ for product in product_urls:
             'brand': brand,
             'name': name,
             'link': product,
-            'category': category,
+            #'category': category,
             'ingredients': ingredients
         })
 
@@ -105,7 +105,8 @@ for product in product_urls:
 driver.quit()
 
 with open('peachandlily.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    fieldnames = ['brand', 'name', 'link', 'category', 'ingredients']
+    #fieldnames = ['brand', 'name', 'link', 'category', 'ingredients']
+    fieldnames = ['brand', 'name', 'link', 'ingredients']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
@@ -115,7 +116,7 @@ with open('peachandlily.csv', 'w', newline='', encoding='utf-8') as csvfile:
             'brand': product['brand'],
             'name': product['name'],
             'link': product['link'],
-            'category': product['category'],
+            #'category': product['category'],
             'ingredients': product['ingredients']  
         })
 

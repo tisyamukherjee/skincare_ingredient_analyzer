@@ -94,7 +94,7 @@ for url in category_urls:
             )
             soup = BeautifulSoup(driver.page_source, 'html.parser')
             breadcrumb_list = soup.find('ul', class_='breadcrumb__nav-list')
-            title = breadcrumb_list.find_all('li')[2].get("title")
+            #title = breadcrumb_list.find_all('li')[2].get("title")
 
             # Handle the cookie banner
             try:
@@ -130,7 +130,7 @@ for url in category_urls:
                 'brand': "CeraVe",
                 'name': name,
                 'link': link,
-                'category': title,
+                #'category': title,
                 'ingredients': ingredients
             })
         # Perform your scraping here
@@ -147,7 +147,8 @@ for url in category_urls:
 driver.quit()
 
 with open('cerave.csv', 'w', newline='', encoding='utf-8') as csvfile:
-    fieldnames = ['brand', 'name', 'link', 'category', 'ingredients']
+    # fieldnames = ['brand', 'name', 'link', 'category', 'ingredients']
+    fieldnames = ['brand', 'name', 'link', 'ingredients']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
@@ -157,7 +158,7 @@ with open('cerave.csv', 'w', newline='', encoding='utf-8') as csvfile:
             'brand': product['brand'],
             'name': product['name'],
             'link': product['link'],
-            'category': product['category'],
+            #'category': product['category'],
             'ingredients': product['ingredients']  
         })
     
