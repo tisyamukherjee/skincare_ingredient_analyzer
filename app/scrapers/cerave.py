@@ -124,7 +124,7 @@ for url in category_urls:
             # Scrape the ingredient list
             ingredients = soup.find('div', class_="richtext keyIngredients-details__content").text
             link = driver.current_url
-            name = soup.find('h1', class_="pdp-heading").text
+            name = soup.find('h1', class_="pdp-heading").get_text()
 
             product_data.append({
                 'brand': "CeraVe",

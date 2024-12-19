@@ -75,11 +75,6 @@ for url in product_urls:
     driver.get(url)
     close_popup_if_present(driver)
 
-    # # Wait for the element to be clickable
-    # ingredient_tab = wait.until(EC.element_to_be_clickable((By.XPATH, '//h2[text()="Ingredients"]/ancestor::span[@role="button"]')))
-    # # Optionally, click the element
-    # driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", ingredient_tab)
-    # driver.execute_script("arguments[0].click();", ingredient_tab)
     try:
         # Wait for the Ingredients tab to be clickable
         ingredient_tab = WebDriverWait(driver, 10).until(
