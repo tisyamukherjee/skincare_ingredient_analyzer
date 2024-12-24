@@ -17,7 +17,7 @@ import time
 # Function to check for the "Next Page" button
 def check_next_page():
     try:
-        next_button = driver.find_element(By.CSS_SELECTOR, 'a[aria-label="Next Page"]')
+        next_button = driver.find_element(By.CSS_SELECTOR, 'a[aria-label="Page Next"]')
         return next_button
     except NoSuchElementException:
         return None

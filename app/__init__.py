@@ -1,26 +1,20 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from app.config import Config
 
-# Initialize the database object globally
 db = SQLAlchemy()
+migrate = Migrate()
 
 def create_app():
-    # Create the Flask app instance
     app = Flask(__name__)
-    
-    # Configure the app
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    
-    # Initialize extensions
+    app.config.from_object(Config)
+
     db.init_app(app)
-    
-    # Register blueprints
-    from .routes import bp  # Import blueprint after app creation to avoid circular imports
-    app.register_blueprint(bp)
-    
-    # Create database tables
-    with app.app_context():
-        db.create_all()
-    
+    migrate.init_app(app, db)
+
+    # Register the blueprint
+    from app.routes import bp as api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
+
     return app
