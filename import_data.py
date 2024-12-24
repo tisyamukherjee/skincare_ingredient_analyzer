@@ -2,6 +2,7 @@ from app import create_app, db
 from app.models import ScrapedData
 import csv
 
+
 # Create the app instance
 app = create_app()
 
