@@ -1,6 +1,6 @@
 # Skincare Ingredient Analysis Tool  
 
-This project is a **completed tool** for cleaning and analyzing skincare product ingredient lists. Built with **Python**, it demonstrates skills in **web scraping**, **AI-driven data cleaning**, and designing **scalable data processing pipelines**.  
+This project is a tool for analyzing skincare product ingredient lists. Built with **Python**, it demonstrates skills in **web scraping**, **AI-driven data cleaning**, and designing **scalable data processing pipelines**.  
 
 The tool processes ingredient lists and outputs a JSON file with at least **50% ingredient similarity**, helping users identify similar products based on their ingredient composition.  
 
@@ -25,5 +25,5 @@ The tool processes ingredient lists and outputs a JSON file with at least **50% 
 
 ## Usage  
 
-To use the tool, provide a string of ingredients as input, and the tool will return a JSON file with products that share at least 50% similarity in ingredients.
+To use the tool, provide a string of ingredients as input, and the tool will return products that share at least 50% similarity in ingredients.
 
