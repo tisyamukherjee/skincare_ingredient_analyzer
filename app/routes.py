@@ -59,8 +59,6 @@ def calculate_similarity(ingredients_1, ingredients_2):
 
     return similarity_score
 
-
-
 @bp.route('/find_similar', methods=['POST'])
 
 def find_similar():
@@ -79,8 +77,12 @@ def find_similar():
 
     if not user_ingredients:
         return jsonify({"error": "No ingredients found for the given input"}), 400
+    
+    # Ensure user ingredients are in the correct format
+    ingredients_set = user_ingredients.split(',')
+    # Strip whitespace and convert each ingredient to uppercase
+    ingredients_set = {ingredient.strip().upper() for ingredient in ingredients_set}
 
-    ingredients_set = set(user_ingredients.split(','))
     filtered_products = ScrapedData.query.filter(
         or_(
             ScrapedData.ingredients.ilike(f"%{ingredient.strip()}%")
@@ -109,11 +111,6 @@ def find_similar():
         print("Successfully saved similar products to 'similar_products.json'.")
     except Exception as e:
         return jsonify({"error": f"Error saving JSON file: {str(e)}"}), 500
-    
-    # products = ScrapedData.query.with_entities(ScrapedData.brand).distinct().all()
-    # print(len(products))
-    # print([product.brand for product in products])
-
 
     # Return the result as a JSON response
     return jsonify(similar_products)

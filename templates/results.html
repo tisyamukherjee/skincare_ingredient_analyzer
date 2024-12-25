@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <h1 class="result_heading">View Your Results!</h1>
+    {% if results %}
+    <p> Below is a list of products with links that have at least 50% similar ingredients! </p>
+    <ul class="results-list">
+        {% for result in results %}
+        <li class="result-item">
+            <a href="{{ result.link }}" target="_blank" class="result-link">
+                <strong>{{ result.brand }} {{ result.name }}</strong>
+            </a>: 
+            <span class="similarity-score">{{ (result.similarity_score * 100) | round(2) }}% Similar</span>
+        </li>           
+        {% endfor %}
+    </ul>    
+    {% else %}
+    <p> No results found </p> 
+    {% endif %}
+    <a href="/" class="back-link">Go Back</a>
+</body>
+</html>

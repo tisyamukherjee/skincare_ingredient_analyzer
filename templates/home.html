@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Ingredient Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>    
+</head>
+<body>
+    <h1>Welcome to the Skincare Ingredient Analyzer!</h1>
+    <p class="blurb">
+        Our tool helps you find skincare products with similar ingredient compositions.
+        Simply enter the ingredients of a product or list the ingredients you're interested in, 
+        and we’ll compare them against a database of popular skincare items. 
+        Discover products tailored to your needs with just a few clicks! 
+    </p>
+    <form action="/results" method="post" class="form-container">
+        <label for="ingredients">Ingredients (comma sperated list): </label>
+        <textarea id="ingredients" name="ingredients" rows="5" cols="50" required></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,150 @@
+h1 {
+    margin: 50px auto; /* Adds some spacing around the heading */
+    text-align: center; /* Centers the text horizontally */
+    font-size: clamp(2.5rem, 5vw, 50px); /* Makes the size responsive */
+    font-family: 'Arial';
+    color: #333; /* Neutral color for better visibility */
+    font-weight: bold; /* Emphasize the heading */
+}
+
+p {
+    margin: 50px auto; /* Adds some spacing around the heading */
+    text-align: center; /* Centers the text horizontally */
+    font-size: 20px;
+    font-family: 'Arial';
+    color: #333; /* Neutral color for better visibility */
+}
+
+.blurb {
+    /* margin: 50px auto; 
+    text-align: center; 
+    font-size: 20px;
+    font-family: 'Arial';
+    color: #333;  */
+    height: 100px;
+    width: 700px;
+}
+
+/* General Form Styling */
+.form-container {
+    max-width: 600px;
+    margin: 50px auto; /* Center the form */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Label Styling */
+.form-container label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Textarea Styling */
+.form-container textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Allow resizing only vertically */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styling */
+.form-container button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the unordered list */
+.results-list {
+    list-style-type: disc; /* Keep the bullet points */
+    padding-left: 20px; /* Add space for the bullets */
+    margin: 20px 20px; /* Add space above and below */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Wrap items to the next row */
+    gap: 20px; /* Add space between items */
+}
+
+/* Style each list item */
+.result-item {
+    width: 48%; /* Half the width of the container (including gap) */
+    background-color: #f9f9f9; /* Light background for each item */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 10px; /* Add padding inside the item */
+    position: relative; /* Required for bullet alignment */
+}
+
+/* Adjust the position of the bullet points */
+.result-item::marker {
+    font-size: 16px; /* Slightly larger bullets */
+    color: #333; /* Match the link color */
+}
+
+/* Style the hyperlink */
+.result-link {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Blue link color */
+    font-size: 16px; /* Increase font size */
+}
+
+/* Hover effect for links */
+.result-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for the similarity score */
+.similarity-score {
+    font-size: 14px; /* Slightly smaller font size */
+    color: #555; /* Gray color for contrast */
+    margin-left: 10px; /* Add spacing before the score */
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.back-link:active {
+    background-color: #004085;
+}
+
